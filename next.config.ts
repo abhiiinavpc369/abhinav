@@ -21,6 +21,7 @@ const nextConfig = {
 
   // Performance
   poweredByHeader: false,
+  trailingSlash: false,
 
   // For static export (GitHub Pages)
   // Uncomment these lines when deploying to GitHub Pages
