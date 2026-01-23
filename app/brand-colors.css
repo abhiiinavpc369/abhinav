@@ -1,0 +1,19 @@
+/* Brand color hover effects for social icons */
+.social-icon-github:hover svg {
+    color: #333 !important;
+}
+
+.social-icon-linkedin:hover svg {
+    color: #0A66C2 !important;
+}
+
+.social-icon-twitter:hover svg {
+    color: #1DA1F2 !important;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+    .social-icon-github:hover svg {
+        color: #fff !important;
+    }
+}
