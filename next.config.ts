@@ -5,7 +5,14 @@ const nextConfig = {
 
   // Image optimization
   images: {
-    domains: ['api.screenshotmachine.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'api.screenshotmachine.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
     formats: ['image/avif', 'image/webp'],
   },
 
