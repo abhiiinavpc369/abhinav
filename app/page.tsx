@@ -6,7 +6,6 @@ import Projects from "@/components/sections/Projects";
 import Skills from "@/components/sections/Skills";
 
 export default function Home() {
-  console.log("Rendering Home Page");
   return (
     <>
       <Navbar />
