@@ -25,7 +25,7 @@ const nextConfig = {
 
   // For static export (GitHub Pages)
   // Uncomment these lines when deploying to GitHub Pages
-  // output: 'export',
+  output: 'export',
   // basePath: '/your-repo-name',
   // images: {
   //   unoptimized: true,
