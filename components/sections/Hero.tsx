@@ -7,7 +7,7 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { personalInfo, typingTexts } from "@/lib/data";
 
 export default function Hero() {
-    const [typingText, setTypingText] = useState("");
+    const [typingText, setTypingText] = useState(typingTexts[0]);
     const [textIndex, setTextIndex] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
 
@@ -38,11 +38,11 @@ export default function Hero() {
 
     return (
         <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-            {/* Animated Background */}
+            {/* Local decorative blobs */}
             <div className="absolute inset-0 -z-10">
-                <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/30 rounded-full blur-3xl animate-float" />
-                <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/30 rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }} />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
+                <div className="absolute top-24 left-8 w-80 h-80 bg-primary/25 rounded-full blur-3xl animate-float-slow" />
+                <div className="absolute bottom-24 right-12 w-96 h-96 bg-secondary/25 rounded-full blur-3xl animate-float-slow" style={{ animationDelay: "1.2s" }} />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[28rem] h-[28rem] bg-accent/15 rounded-full blur-3xl animate-float-slow" style={{ animationDelay: "2.4s" }} />
             </div>
 
             <div className="container-custom">
@@ -56,14 +56,11 @@ export default function Hero() {
                         Hi, I&apos;m
                     </motion.p>
 
-                    <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.1 }}
+                    <h1
                         className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold gradient-text"
                     >
                         {personalInfo.name}
-                    </motion.h1>
+                    </h1>
 
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -74,17 +71,14 @@ export default function Hero() {
                         AKA {personalInfo.nickname}
                     </motion.p>
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
+                    <div
                         className="h-16 md:h-20"
                     >
                         <h2 className="text-3xl md:text-5xl font-heading font-semibold text-foreground/90">
                             {typingText}
                             <span className="animate-pulse">|</span>
                         </h2>
-                    </motion.div>
+                    </div>
 
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -103,7 +97,7 @@ export default function Hero() {
                     >
                         <a
                             href="/#projects"
-                            className="px-8 py-3 bg-gradient-to-r from-primary to-secondary rounded-full font-medium hover:shadow-lg hover:shadow-primary/50 transition-all hover:scale-105"
+                            className="px-8 py-3 rounded-full font-medium bg-gradient-to-r from-primary to-secondary hover:shadow-[0_10px_30px_-10px] hover:shadow-primary/50 transition-all hover:scale-[1.03]"
                         >
                             View My Work
                         </a>

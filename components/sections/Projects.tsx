@@ -67,11 +67,11 @@ export default function Projects() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
-                            className="group cursor-pointer relative overflow-hidden bg-white/5 rounded-2xl border border-white/10 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/20"
+                            className="group cursor-pointer relative overflow-hidden bg-white/5 rounded-2xl border border-white/10 transition-all duration-500 hover:shadow-[0_40px_80px_-20px] hover:shadow-primary/20 hover:-translate-y-1"
                         >
                             {/* Image Container */}
                             <div className="aspect-[16/10] overflow-hidden bg-muted/20">
-                                <div className={`w-full h-full bg-gradient-to-br ${gradients[index % gradients.length]} group-hover:scale-105 transition-transform duration-700 flex items-center justify-center p-12`}>
+                                <div className={`w-full h-full bg-gradient-to-br ${gradients[index % gradients.length]} group-hover:scale-105 transition-transform duration-700 flex items-center justify-center p-12` }>
                                     <div className="relative w-full h-full border border-white/10 rounded-lg backdrop-blur-sm bg-white/10 flex items-center justify-center">
                                         <div className="text-white/20 text-6xl">💻</div>
                                     </div>

@@ -74,16 +74,34 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark no-effects">
       <head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#A855F7" />
       </head>
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased`}
+        className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased relative`}
       >
+        {/* Background layers */}
+        <div className="app-bg" aria-hidden>
+          <div className="layer-radials"></div>
+          <div className="layer-grid"></div>
+          <div className="layer-vignette"></div>
+        </div>
+
         {children}
         <AvailabilityBadge />
+
+        {/* Remove first-paint no-effects once mounted to improve LCP without losing visuals */}
+        <script dangerouslySetInnerHTML={{ __html: `
+          (function(){
+            var onReady = function(){
+              document.documentElement.classList.remove('no-effects');
+            };
+            if (document.readyState === 'complete' || document.readyState === 'interactive') { onReady(); }
+            else { document.addEventListener('DOMContentLoaded', onReady); }
+          })();
+        ` }} />
       </body>
     </html>
   );

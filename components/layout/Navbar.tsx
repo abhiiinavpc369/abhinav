@@ -21,10 +21,14 @@ export default function Navbar() {
 
     return (
         <>
-            {/* Desktop Navbar - Fixed, no scroll effects */}
-            <nav className="hidden md:block fixed top-0 left-0 right-0 z-50 glass-card shadow-lg py-4">
+            {/* Desktop Navbar - Sticky with subtle blur */}
+            <nav className="hidden md:block sticky top-4 left-0 right-0 z-50">
                 <div className="container-custom">
-                    <div className="flex items-center justify-between">
+                    <div className="relative glass-card px-6 py-4 rounded-2xl border border-white/10 overflow-hidden">
+                        {/* Liquid glass overlays */}
+                        <div className="liquid-glass" aria-hidden></div>
+                        <div className="liquid-shine" aria-hidden></div>
+                        <div className="relative flex items-center justify-between">
                         {/* Logo */}
                         <Link
                             href="/"
@@ -47,6 +51,7 @@ export default function Navbar() {
                                 </li>
                             ))}
                         </ul>
+                    </div>
                     </div>
                 </div>
             </nav>

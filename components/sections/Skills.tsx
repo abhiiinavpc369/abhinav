@@ -83,7 +83,7 @@ export default function Skills() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
-                            className="glass-card p-6 space-y-6 hover:scale-105 transition-all duration-300"
+                            className="glass-card p-6 space-y-6 hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300"
                         >
                             <div className="flex items-center gap-3">
                                 <div className="p-3 bg-gradient-to-br from-primary to-secondary rounded-full text-white">

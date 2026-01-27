@@ -26,8 +26,8 @@ export default function AvailabilityBadge() {
         <div className="fixed bottom-6 right-6 z-40 hidden md:block">
             <div className="glass-card px-4 py-3 rounded-full shadow-lg flex items-center gap-3 hover:scale-105 transition-transform">
                 <div className="relative">
-                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                    <div className="absolute inset-0 w-3 h-3 bg-green-500 rounded-full animate-ping opacity-75"></div>
+                    <div className="w-3 h-3 bg-green-400 rounded-full shadow-[0_0_12px_2px_rgba(34,197,94,0.7)]"></div>
+                    <div className="absolute inset-0 w-3 h-3 bg-green-500 rounded-full animate-ping opacity-60"></div>
                 </div>
                 <div className="flex flex-col">
                     <span className="text-sm font-medium text-foreground">Available</span>
