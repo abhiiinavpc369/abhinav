@@ -29,36 +29,36 @@ export default function Navbar() {
                         <div className="liquid-glass" aria-hidden></div>
                         <div className="liquid-shine" aria-hidden></div>
                         <div className="relative flex items-center justify-between">
-                        {/* Logo */}
-                        <Link
-                            href="/"
-                            className="text-2xl font-heading font-bold gradient-text hover:scale-105 transition-transform"
-                        >
-                            {personalInfo.initials}
-                        </Link>
+                            {/* Logo */}
+                            <Link
+                                href="/"
+                                className="text-2xl font-heading font-bold hover:scale-105 transition-transform"
+                            >
+                                {personalInfo.initials}
+                            </Link>
 
-                        {/* Desktop Navigation */}
-                        <ul className="flex items-center gap-8">
-                            {navLinks.map((link) => (
-                                <li key={link.href}>
-                                    <Link
-                                        href={link.href}
-                                        className="text-foreground/80 hover:text-foreground transition-colors relative group"
-                                    >
-                                        {link.label}
-                                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all group-hover:w-full" />
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+                            {/* Desktop Navigation */}
+                            <ul className="flex items-center gap-8">
+                                {navLinks.map((link) => (
+                                    <li key={link.href}>
+                                        <Link
+                                            href={link.href}
+                                            className="text-foreground/80 hover:text-foreground transition-colors relative group"
+                                        >
+                                            {link.label}
+                                            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </nav>
 
-            {/* Mobile Bottom Navbar - Pill Shaped */}
-            <nav className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-md">
-                <div className="glass-card px-6 py-4 rounded-full shadow-2xl">
+            {/* Mobile Bottom Navbar - Fixed to Bottom */}
+            <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 w-full">
+                <div className="bg-background/95 border-t border-white/10 px-6 py-4 rounded-t-3xl backdrop-blur-2xl">
                     <ul className="flex items-center justify-around">
                         {mobileNavLinks.map((link) => (
                             <li key={link.href}>

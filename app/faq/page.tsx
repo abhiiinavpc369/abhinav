@@ -34,10 +34,10 @@ export default function FAQPage() {
                             transition={{ duration: 0.6 }}
                             className="text-center mb-16"
                         >
-                            <h1 className="text-4xl md:text-6xl font-heading font-bold gradient-text mb-4">
+                            <h1 className="text-4xl md:text-6xl font-heading font-bold mb-4">
                                 Frequently Asked Questions
                             </h1>
-                            <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mb-4" />
+                            <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-4" />
                             <p className="text-foreground/70 text-lg max-w-2xl mx-auto">
                                 Got questions? I&apos;ve got answers. Here are some common questions about my work, process, and availability.
                             </p>
@@ -98,7 +98,7 @@ export default function FAQPage() {
                                 </p>
                                 <Link
                                     href="/#contact"
-                                    className="inline-block px-8 py-3 bg-gradient-to-r from-primary to-secondary rounded-full font-medium hover:shadow-lg hover:shadow-primary/50 transition-all hover:scale-105"
+                                    className="inline-block px-8 py-3 bg-primary rounded-full font-medium transition-all hover:scale-105"
                                 >
                                     Get In Touch
                                 </Link>

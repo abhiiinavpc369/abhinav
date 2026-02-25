@@ -17,6 +17,16 @@ export default function Contact() {
         return icons[iconName] || faEnvelope;
     };
 
+    const getBrandHoverColor = (iconName: string) => {
+        const colors: Record<string, string> = {
+            envelope: "group-hover:text-secondary",
+            github: "group-hover:text-[#fafafa]",
+            linkedin: "group-hover:text-[#0077b5]",
+            twitter: "group-hover:text-[#1da1f2]",
+        };
+        return colors[iconName] || "group-hover:text-primary";
+    };
+
     return (
         <section id="contact" className="section-padding bg-muted/20">
             <div className="container-custom">
@@ -27,10 +37,10 @@ export default function Contact() {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl md:text-5xl font-heading font-bold gradient-text mb-4">
+                    <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
                         Get In Touch
                     </h2>
-                    <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mb-4" />
+                    <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-4" />
                     <p className="text-foreground/70 text-lg">
                         Let&apos;s build something amazing together
                     </p>
@@ -60,8 +70,11 @@ export default function Contact() {
                                 transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
                                 className={`social-icon-${method.icon} glass-card-hover p-6 flex items-center gap-4 group`}
                             >
-                                <div className="p-3 bg-gradient-to-br from-primary to-secondary rounded-full text-white flex-shrink-0">
-                                    <FontAwesomeIcon icon={getIcon(method.icon)} className="w-6 h-6" />
+                                <div className="p-3 bg-transparent rounded-full border border-white/10 text-foreground/70 flex-shrink-0 transition-all duration-300 group-hover:border-transparent group-hover:scale-110">
+                                    <FontAwesomeIcon
+                                        icon={getIcon(method.icon)}
+                                        className={`w-6 h-6 transition-colors duration-300 ${getBrandHoverColor(method.icon)}`}
+                                    />
                                 </div>
                                 <div className="flex-1">
                                     <div className="text-sm text-foreground/60 mb-1">

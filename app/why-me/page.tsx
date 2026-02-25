@@ -47,10 +47,10 @@ export default function WhyMePage() {
                             transition={{ duration: 0.6 }}
                             className="text-center mb-16"
                         >
-                            <h1 className="text-4xl md:text-6xl font-heading font-bold gradient-text mb-4">
+                            <h1 className="text-4xl md:text-6xl font-heading font-bold mb-4">
                                 Why Choose Me?
                             </h1>
-                            <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mb-4" />
+                            <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-4" />
                             <p className="text-foreground/70 text-lg max-w-2xl mx-auto">
                                 I bring a unique combination of technical expertise, dedication, and passion to every project. Here&apos;s what sets me apart.
                             </p>
@@ -67,7 +67,7 @@ export default function WhyMePage() {
                                     className="glass-card p-6 hover:scale-105 transition-transform"
                                 >
                                     <div className="flex items-center gap-4 mb-4">
-                                        <div className="p-4 bg-gradient-to-br from-primary to-secondary rounded-full text-white">
+                                        <div className="p-4 bg-primary rounded-full text-white">
                                             <FontAwesomeIcon
                                                 icon={iconMap[reason.icon] || faGem}
                                                 className="w-6 h-6"
@@ -84,31 +84,7 @@ export default function WhyMePage() {
                             ))}
                         </div>
 
-                        {/* Philosophy Section */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.6 }}
-                            className="mt-16 max-w-3xl mx-auto"
-                        >
-                            <div className="glass-card p-8">
-                                <div className="text-center mb-6">
-                                    <div className="inline-block p-4 bg-gradient-to-br from-primary to-secondary rounded-full text-white mb-4">
-                                        <FontAwesomeIcon icon={faGem} className="w-8 h-8" />
-                                    </div>
-                                    <h2 className="text-2xl md:text-3xl font-heading font-bold mb-4">
-                                        My Core Philosophy
-                                    </h2>
-                                </div>
-                                <blockquote className="text-xl italic text-foreground/90 text-center border-l-4 border-primary pl-6">
-                                    &ldquo;Loyalty is a two-way street. If I&apos;m asking it from you, then you&apos;re getting it from me.&rdquo;
-                                </blockquote>
-                                <p className="text-foreground/70 mt-6 text-center">
-                                    This philosophy drives everything I do. When you work with me, you&apos;re not just hiring a developer—you&apos;re gaining a committed partner who values trust, consistency, and mutual respect.
-                                </p>
-                            </div>
-                        </motion.div>
+
 
                         {/* CTA Section */}
                         <motion.div
@@ -128,7 +104,7 @@ export default function WhyMePage() {
                                 <div className="flex flex-wrap gap-4 justify-center">
                                     <Link
                                         href="/contact"
-                                        className="px-8 py-3 bg-gradient-to-r from-primary to-secondary rounded-full font-medium hover:shadow-lg hover:shadow-primary/50 transition-all hover:scale-105"
+                                        className="px-8 py-3 bg-primary rounded-full font-medium transition-all hover:scale-105"
                                     >
                                         Get In Touch
                                     </Link>

@@ -16,10 +16,10 @@ export default function About() {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl md:text-5xl font-heading font-bold gradient-text mb-4">
+                    <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
                         About Me
                     </h2>
-                    <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full" />
+                    <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
                 </motion.div>
 
                 <div className="max-w-4xl mx-auto space-y-8">
@@ -43,29 +43,7 @@ export default function About() {
                         With expertise in the MERN stack and modern web technologies, I specialize in building responsive, user-friendly applications that combine beautiful design with robust functionality. My approach is rooted in clean code, best practices, and continuous learning.
                     </motion.p>
 
-                    {/* Philosophy Card */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.3 }}
-                        className="glass-card p-8 space-y-4"
-                    >
-                        <div className="flex items-center gap-3">
-                            <div className="p-3 bg-gradient-to-br from-primary to-secondary rounded-full text-white">
-                                <FontAwesomeIcon icon={faGem} className="w-6 h-6" />
-                            </div>
-                            <h3 className="text-2xl font-heading font-semibold">Personal Philosophy</h3>
-                        </div>
 
-                        <blockquote className="text-xl italic text-foreground/90 border-l-4 border-primary pl-6">
-                            &ldquo;{personalInfo.philosophy}&rdquo;
-                        </blockquote>
-
-                        <p className="text-foreground/80">
-                            I believe in building long-term relationships based on trust, consistency, and mutual respect. Quality work isn&apos;t just about code—it&apos;s about commitment to excellence and reliability.
-                        </p>
-                    </motion.div>
 
                     {/* Stats */}
                     <motion.div
@@ -80,7 +58,7 @@ export default function About() {
                                 key={index}
                                 className="glass-card p-6 text-center hover:scale-105 transition-transform"
                             >
-                                <div className="text-4xl font-bold gradient-text mb-2">
+                                <div className="text-4xl font-bold mb-2">
                                     {stat.value}
                                 </div>
                                 <div className="text-foreground/70">{stat.label}</div>

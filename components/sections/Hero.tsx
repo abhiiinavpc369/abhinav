@@ -38,12 +38,7 @@ export default function Hero() {
 
     return (
         <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-            {/* Local decorative blobs */}
-            <div className="absolute inset-0 -z-10">
-                <div className="absolute top-24 left-8 w-80 h-80 bg-primary/25 rounded-full blur-3xl animate-float-slow" />
-                <div className="absolute bottom-24 right-12 w-96 h-96 bg-secondary/25 rounded-full blur-3xl animate-float-slow" style={{ animationDelay: "1.2s" }} />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[28rem] h-[28rem] bg-accent/15 rounded-full blur-3xl animate-float-slow" style={{ animationDelay: "2.4s" }} />
-            </div>
+
 
             <div className="container-custom">
                 <div className="flex flex-col items-center text-center gap-6">
@@ -97,7 +92,7 @@ export default function Hero() {
                     >
                         <a
                             href="/#projects"
-                            className="px-8 py-3 rounded-full font-medium bg-gradient-to-r from-primary to-secondary hover:shadow-[0_10px_30px_-10px] hover:shadow-primary/50 transition-all hover:scale-[1.03]"
+                            className="px-8 py-3 rounded-full font-medium bg-primary transition-all hover:scale-[1.03]"
                         >
                             View My Work
                         </a>

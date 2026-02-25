@@ -66,10 +66,10 @@ export default function Skills() {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl md:text-5xl font-heading font-bold gradient-text mb-4">
+                    <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
                         Skills & Technologies
                     </h2>
-                    <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mb-4" />
+                    <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-4" />
                     <p className="text-foreground/70 text-lg">
                         My technical expertise and proficiency levels
                     </p>
@@ -86,7 +86,7 @@ export default function Skills() {
                             className="glass-card p-6 space-y-6 hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300"
                         >
                             <div className="flex items-center gap-3">
-                                <div className="p-3 bg-gradient-to-br from-primary to-secondary rounded-full text-white">
+                                <div className="p-3 bg-primary rounded-full text-white flex-shrink-0">
                                     <FontAwesomeIcon
                                         icon={categoryIcons[category.title] || faCode}
                                         className="w-6 h-6"
@@ -127,7 +127,7 @@ export default function Skills() {
                                                     delay: categoryIndex * 0.1 + skillIndex * 0.05 + 0.2,
                                                     ease: "easeOut"
                                                 }}
-                                                className="h-full bg-gradient-to-r from-primary via-accent to-secondary rounded-full relative overflow-hidden"
+                                                className="h-full bg-primary rounded-full relative overflow-hidden"
                                             >
                                                 <motion.div
                                                     className="absolute inset-0 bg-white/20"

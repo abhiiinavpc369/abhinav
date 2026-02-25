@@ -30,13 +30,22 @@ export default function Footer() {
         return icons[iconName] || faGithub;
     };
 
+    const getBrandHoverColor = (iconName: string) => {
+        const colors: Record<string, string> = {
+            github: "group-hover:text-[#fafafa]",
+            linkedin: "group-hover:text-[#0077b5]",
+            twitter: "group-hover:text-[#1da1f2]",
+        };
+        return colors[iconName] || "group-hover:text-primary";
+    };
+
     return (
         <footer className="bg-background border-t border-white/10">
             <div className="container-custom py-16">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                     {/* Brand Section */}
                     <div className="lg:col-span-2">
-                        <h3 className="text-3xl font-heading font-bold gradient-text mb-4">
+                        <h3 className="text-3xl font-heading font-bold mb-4">
                             {personalInfo.initials}
                         </h3>
                         <p className="text-foreground/70 mb-6 max-w-md leading-relaxed">
@@ -109,12 +118,12 @@ export default function Footer() {
                                     href={social.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={`social-icon-${social.icon} p-3 glass-card rounded-full transition-all duration-300 hover:scale-110 group`}
+                                    className="p-3 bg-transparent border border-white/10 rounded-full text-foreground/60 transition-all duration-300 hover:scale-110 hover:border-transparent group"
                                     aria-label={social.name}
                                 >
                                     <FontAwesomeIcon
                                         icon={getIcon(social.icon)}
-                                        className="w-5 h-5 text-foreground transition-colors duration-300 group-hover:text-current"
+                                        className={`w-5 h-5 transition-colors duration-300 ${getBrandHoverColor(social.icon)}`}
                                     />
                                 </a>
                             ))}

@@ -9,7 +9,6 @@ export const personalInfo = {
     email: "management.abhiiinav@gmail.com",
     location: "India",
     status: "Student",
-    philosophy: "Loyalty is a two-way street. If I'm asking it from you, then you're getting it from me.",
 };
 
 export const typingTexts = [

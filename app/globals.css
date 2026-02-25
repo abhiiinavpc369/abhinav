@@ -1,20 +1,26 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: oklch(0.15 0.02 264);
-  --color-foreground: oklch(0.95 0.01 264);
+  --color-background: oklch(0.12 0.02 0);
+  /* Near Black */
+  --color-foreground: oklch(0.98 0.01 0);
+  /* Off-White */
 
-  --color-primary: oklch(0.55 0.25 290);
-  --color-primary-foreground: oklch(0.95 0.01 264);
+  --color-primary: oklch(0.6 0.22 250);
+  /* Vibrant Azure/Electric Blue */
+  --color-primary-foreground: oklch(0.98 0.01 0);
 
-  --color-secondary: oklch(0.65 0.20 250);
-  --color-secondary-foreground: oklch(0.15 0.02 264);
+  --color-secondary: oklch(0.55 0.2 25);
+  /* Bold Red */
+  --color-secondary-foreground: oklch(0.98 0.01 0);
 
-  --color-accent: oklch(0.75 0.25 310);
-  --color-accent-foreground: oklch(0.15 0.02 264);
+  --color-accent: oklch(0.8 0.05 0);
+  /* Light Grey */
+  --color-accent-foreground: oklch(0.12 0.02 0);
 
-  --color-muted: oklch(0.25 0.02 264);
-  --color-muted-foreground: oklch(0.65 0.01 264);
+  --color-muted: oklch(0.25 0.02 0);
+  /* Dark Grey */
+  --color-muted-foreground: oklch(0.7 0.02 0);
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
@@ -40,10 +46,7 @@ body {
   -webkit-backdrop-filter: saturate(140%) blur(20px);
   border: 1px solid oklch(0.95 0.01 264 / 0.12);
   border-radius: 1.125rem;
-  box-shadow:
-    0 1px 0 0 oklch(0.95 0.01 264 / 0.15) inset,
-    0 30px 60px -12px oklch(0.55 0.25 290 / 0.18),
-    0 18px 36px -18px oklch(0.75 0.25 310 / 0.12);
+  box-shadow: none;
   transition: transform 250ms cubic-bezier(0.2, 0.8, 0.2, 1),
     box-shadow 250ms cubic-bezier(0.2, 0.8, 0.2, 1),
     background-color 250ms ease;
@@ -63,34 +66,15 @@ body {
 .glass-card-hover:hover {
   background: oklch(0.98 0.01 264 / 0.08);
   border-color: oklch(0.95 0.01 264 / 0.24);
-  box-shadow:
-    0 2px 0 0 oklch(0.95 0.01 264 / 0.18) inset,
-    0 40px 60px -12px oklch(0.55 0.25 290 / 0.25),
-    0 25px 40px -18px oklch(0.75 0.25 310 / 0.16);
   transform: translateY(-3px);
 }
 
-/* Gradient text */
+/* Solid text color instead of gradient */
 .gradient-text {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-accent), var(--color-secondary));
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  background-size: 200% 200%;
-  animation: gradient-shift 8s ease infinite;
+  color: var(--color-foreground);
 }
 
-@keyframes gradient-shift {
 
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-}
 
 /* Section padding */
 .section-padding {
@@ -223,81 +207,73 @@ button {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(to right, oklch(0.95 0.01 264 / 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, oklch(0.95 0.01 264 / 0.06) 1px, transparent 1px);
+    linear-gradient(to right, oklch(0.95 0.01 165 / 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(0.95 0.01 165 / 0.03) 1px, transparent 1px);
   background-size: 40px 40px;
-  mask-image: radial-gradient(ellipse at 50% 20%, black 0%, transparent 70%);
 }
 
 .app-bg .layer-radials {
   position: absolute;
-  inset: -20%;
-  background:
-    radial-gradient(600px circle at 20% 10%, oklch(0.55 0.25 290 / 0.25), transparent 60%),
-    radial-gradient(500px circle at 80% 20%, oklch(0.75 0.25 310 / 0.20), transparent 55%),
-    radial-gradient(700px circle at 50% 80%, oklch(0.65 0.20 250 / 0.18), transparent 60%);
-  filter: blur(30px) saturate(130%);
+  inset: 0;
+  background: var(--color-background);
 }
 
 .app-bg .layer-vignette {
   position: absolute;
   inset: 0;
-  background: radial-gradient(1200px circle at 50% 120%, transparent 40%, oklch(0.15 0.02 264) 85%);
-  mix-blend-mode: multiply;
+  display: none;
 }
 
 /* Slow float animation utility */
 @keyframes float-slow {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
+
 .animate-float-slow {
   animation: float-slow 6s ease-in-out infinite;
 }
 
 /* Liquid glass utilities */
 .liquid-glass {
-  position: absolute;
-  inset: -1px;
-  pointer-events: none;
-  background:
-    radial-gradient(120px 80px at 10% 40%, oklch(0.98 0.01 264 / 0.35), transparent 60%),
-    radial-gradient(180px 120px at 90% 30%, oklch(0.98 0.01 264 / 0.25), transparent 60%),
-    radial-gradient(140px 100px at 30% 90%, oklch(0.98 0.01 264 / 0.2), transparent 60%),
-    radial-gradient(220px 160px at 70% 80%, oklch(0.98 0.01 264 / 0.2), transparent 60%);
-  filter: blur(18px) saturate(140%);
-  mix-blend-mode: overlay;
-  opacity: 0.7;
-  animation: liquid-move 12s ease-in-out infinite;
+  display: none;
 }
 
 @keyframes liquid-move {
-  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
-  40% { transform: translate3d(8px, -6px, 0) rotate(8deg); }
-  60% { transform: translate3d(-10px, 6px, 0) rotate(-6deg); }
+
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  40% {
+    transform: translate3d(8px, -6px, 0) rotate(8deg);
+  }
+
+  60% {
+    transform: translate3d(-10px, 6px, 0) rotate(-6deg);
+  }
 }
 
 .liquid-shine {
-  position: absolute;
-  inset: -40%;
-  pointer-events: none;
-  background: conic-gradient(from 0deg at 50% 50%,
-    transparent 0deg,
-    oklch(1 0 0 / 0.08) 30deg,
-    transparent 60deg,
-    transparent 200deg,
-    oklch(1 0 0 / 0.06) 230deg,
-    transparent 260deg
-  );
-  filter: blur(20px);
-  mix-blend-mode: soft-light;
-  opacity: 0.6;
-  animation: shine-sweep 14s linear infinite;
+  display: none;
 }
 
 @keyframes shine-sweep {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* First-paint performance mode: disable heavy effects to improve LCP */

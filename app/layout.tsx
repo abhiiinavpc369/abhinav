@@ -20,7 +20,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: `${personalInfo.name} - ${personalInfo.title} | Portfolio`,
-  description: `Professional portfolio of ${personalInfo.name}, a ${personalInfo.title} from ${personalInfo.location}. Building quality solutions with trust and long-term collaboration. ${personalInfo.philosophy}`,
+  description: `Professional portfolio of ${personalInfo.name}, a ${personalInfo.title} from ${personalInfo.location}. Building quality solutions through dedicated web development.`,
   keywords: [
     "full stack developer",
     "web developer",
@@ -77,7 +77,6 @@ export default function RootLayout({
     <html lang="en" className="dark no-effects">
       <head>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="theme-color" content="#A855F7" />
       </head>
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased relative`}
@@ -93,7 +92,8 @@ export default function RootLayout({
         <AvailabilityBadge />
 
         {/* Remove first-paint no-effects once mounted to improve LCP without losing visuals */}
-        <script dangerouslySetInnerHTML={{ __html: `
+        <script dangerouslySetInnerHTML={{
+          __html: `
           (function(){
             var onReady = function(){
               document.documentElement.classList.remove('no-effects');

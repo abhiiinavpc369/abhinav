@@ -17,10 +17,10 @@ export default function Projects() {
     );
 
     const gradients = [
-        "from-purple-400 to-pink-400",
-        "from-blue-400 to-cyan-400",
-        "from-green-400 to-emerald-400",
-        "from-orange-400 to-red-400",
+        "bg-primary",
+        "bg-secondary",
+        "bg-muted",
+        "bg-primary/80",
     ];
 
     return (
@@ -36,7 +36,7 @@ export default function Projects() {
                     <h2 className="text-4xl md:text-5xl font-heading font-bold gradient-text mb-4">
                         Featured Projects
                     </h2>
-                    <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mb-4" />
+                    <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-4" />
                     <p className="text-foreground/70 text-lg mb-8">
                         A showcase of my recent work and contributions
                     </p>
@@ -67,11 +67,12 @@ export default function Projects() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
-                            className="group cursor-pointer relative overflow-hidden bg-white/5 rounded-2xl border border-white/10 transition-all duration-500 hover:shadow-[0_40px_80px_-20px] hover:shadow-primary/20 hover:-translate-y-1"
+                            className="group cursor-pointer relative overflow-hidden bg-white/5 rounded-2xl border border-white/10 transition-all duration-500 hover:-translate-y-1"
                         >
                             {/* Image Container */}
                             <div className="aspect-[16/10] overflow-hidden bg-muted/20">
-                                <div className={`w-full h-full bg-gradient-to-br ${gradients[index % gradients.length]} group-hover:scale-105 transition-transform duration-700 flex items-center justify-center p-12` }>
+                                {/* Updated background class to a solid color */}
+                                <div className="w-full h-full bg-primary/20 group-hover:scale-105 transition-transform duration-700 flex items-center justify-center p-12">
                                     <div className="relative w-full h-full border border-white/10 rounded-lg backdrop-blur-sm bg-white/10 flex items-center justify-center">
                                         <div className="text-white/20 text-6xl">💻</div>
                                     </div>
@@ -106,7 +107,7 @@ export default function Projects() {
                                         href={project.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-primary to-secondary rounded-full font-medium hover:shadow-lg hover:shadow-primary/50 transition-all hover:scale-105"
+                                        className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-primary rounded-full font-medium transition-all hover:scale-105"
                                     >
                                         <FontAwesomeIcon icon={faGlobe} className="w-4 h-4" />
                                         <span>Demo</span>
