@@ -27,7 +27,7 @@ export const projects: Project[] = [
         image: "https://api.screenshotmachine.com/?key=demo&url=chakraax.com&dimension=1024x768",
         tags: ["React", "Node.js", "MongoDB", "Express"],
         link: "https://chakraax.com",
-        github: "https://github.com/abhiiinavpc369",
+        github: "https://github.com/KarnAbhinav00",
     },
     {
         id: 2,
@@ -55,6 +55,23 @@ export const projects: Project[] = [
         tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
         link: "#",
         github: "https://github.com/abhiiinavpc369",
+    },
+    {
+        id: 5,
+        title: "FalconTiers",
+        description: "Open-source initiative exploring tiered architecture patterns and deployment workflows. Built and maintained on the main GitHub account.",
+        image: "https://api.screenshotmachine.com/?key=demo&url=github.com/KarnAbhinav00/FalconTiers&dimension=1024x768",
+        tags: ["Architecture", "Open Source", "Docs"],
+        link: "https://github.com/KarnAbhinav00/FalconTiers",
+        github: "https://github.com/KarnAbhinav00/FalconTiers",
+    },
+    {
+        id: 6,
+        title: "Project Relay",
+        description: "Upcoming project in the pipeline. Stay tuned for updates on features, stack, and launch details.",
+        image: "https://api.screenshotmachine.com/?key=demo&url=example.com&dimension=1024x768",
+        tags: ["Upcoming", "Planning"],
+        link: "#",
     },
 ];
 
@@ -107,6 +124,11 @@ export const socialLinks: SocialLink[] = [
     {
         name: "GitHub",
         url: "https://github.com/abhiiinavpc369",
+        icon: "github",
+    },
+    {
+        name: "GitHub (Main)",
+        url: "https://github.com/KarnAbhinav00",
         icon: "github",
     },
     {
