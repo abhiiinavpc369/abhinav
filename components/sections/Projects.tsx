@@ -63,15 +63,25 @@ export default function Projects() {
                                 className="w-full pl-12 pr-4 py-3 glass-card rounded-xl text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
                             />
                         </div>
-                        <select
-                            value={selectedTag}
-                            onChange={(e) => setSelectedTag(e.target.value)}
-                            className="md:w-40 w-full glass-card px-4 py-3 rounded-xl text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                        >
-                            {allTags.map(tag => (
-                                <option key={tag} value={tag}>{tag}</option>
-                            ))}
-                        </select>
+                        <div className="md:w-48 w-full relative">
+                            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary/20 via-white/5 to-secondary/10 blur-sm" />
+                            <div className="relative">
+                                <select
+                                    value={selectedTag}
+                                    onChange={(e) => setSelectedTag(e.target.value)}
+                                    className="w-full appearance-none px-4 py-3 pr-12 rounded-xl bg-black/20 border border-white/10 text-foreground font-medium shadow-[0_8px_30px_-12px_rgba(0,0,0,0.45)] focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all backdrop-blur-md"
+                                >
+                                    {allTags.map(tag => (
+                                        <option key={tag} value={tag} className="bg-slate-900 text-foreground">
+                                            {tag}
+                                        </option>
+                                    ))}
+                                </select>
+                                <div className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-primary">
+                                    ▼
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </motion.div>
 
